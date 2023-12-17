@@ -29,44 +29,26 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
             create_bt = new Button();
-            user_textBox = new TextBox();
-            code_textBox = new TextBox();
             enter_bt = new Button();
             label4 = new Label();
+            label2 = new Label();
+            Column1 = new TextBox();
+            Column2 = new TextBox();
+            Column3 = new TextBox();
+            Column4 = new TextBox();
+            Column5 = new TextBox();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 13F);
-            label1.Location = new Point(336, 37);
+            label1.Font = new Font("Times New Roman", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(318, 58);
             label1.Name = "label1";
-            label1.Size = new Size(85, 25);
+            label1.Size = new Size(115, 31);
             label1.TabIndex = 0;
             label1.Text = "Welcome";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(262, 166);
-            label2.Name = "label2";
-            label2.Size = new Size(46, 21);
-            label2.TabIndex = 1;
-            label2.Text = "Code";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(262, 124);
-            label3.Name = "label3";
-            label3.Size = new Size(81, 21);
-            label3.TabIndex = 2;
-            label3.Text = "Username";
             // 
             // create_bt
             // 
@@ -79,20 +61,6 @@
             create_bt.UseVisualStyleBackColor = true;
             create_bt.Click += create_bt_Click;
             // 
-            // user_textBox
-            // 
-            user_textBox.Location = new Point(390, 126);
-            user_textBox.Name = "user_textBox";
-            user_textBox.Size = new Size(100, 23);
-            user_textBox.TabIndex = 4;
-            // 
-            // code_textBox
-            // 
-            code_textBox.Location = new Point(390, 168);
-            code_textBox.Name = "code_textBox";
-            code_textBox.Size = new Size(100, 23);
-            code_textBox.TabIndex = 5;
-            // 
             // enter_bt
             // 
             enter_bt.Font = new Font("Segoe UI", 10F);
@@ -102,6 +70,7 @@
             enter_bt.TabIndex = 6;
             enter_bt.Text = "Enter";
             enter_bt.UseVisualStyleBackColor = true;
+            enter_bt.Click += enter_bt_Click;
             // 
             // label4
             // 
@@ -114,22 +83,85 @@
             label4.Text = "Click Create Button To Create New Account";
             label4.Click += label4_Click;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Times New Roman", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(149, 178);
+            label2.Name = "label2";
+            label2.Size = new Size(56, 31);
+            label2.TabIndex = 8;
+            label2.Text = "PIN";
+            // 
+            // Column1
+            // 
+            Column1.Font = new Font("Times New Roman", 28F);
+            Column1.Location = new Point(225, 166);
+            Column1.MaxLength = 1;
+            Column1.Name = "Column1";
+            Column1.Size = new Size(50, 50);
+            Column1.TabIndex = 9;
+            Column1.TextAlign = HorizontalAlignment.Center;
+            // 
+            // Column2
+            // 
+            Column2.Font = new Font("Times New Roman", 28F);
+            Column2.Location = new Point(294, 166);
+            Column2.MaxLength = 1;
+            Column2.Name = "Column2";
+            Column2.Size = new Size(50, 50);
+            Column2.TabIndex = 10;
+            Column2.TextAlign = HorizontalAlignment.Center;
+            // 
+            // Column3
+            // 
+            Column3.Font = new Font("Times New Roman", 28F);
+            Column3.Location = new Point(364, 166);
+            Column3.MaxLength = 1;
+            Column3.Name = "Column3";
+            Column3.Size = new Size(50, 50);
+            Column3.TabIndex = 11;
+            Column3.TextAlign = HorizontalAlignment.Center;
+            // 
+            // Column4
+            // 
+            Column4.Font = new Font("Times New Roman", 28F);
+            Column4.Location = new Point(429, 166);
+            Column4.MaxLength = 1;
+            Column4.Name = "Column4";
+            Column4.Size = new Size(50, 50);
+            Column4.TabIndex = 12;
+            Column4.TextAlign = HorizontalAlignment.Center;
+            // 
+            // Column5
+            // 
+            Column5.Font = new Font("Times New Roman", 28F);
+            Column5.Location = new Point(494, 166);
+            Column5.MaxLength = 1;
+            Column5.Name = "Column5";
+            Column5.Size = new Size(50, 50);
+            Column5.TabIndex = 13;
+            Column5.TextAlign = HorizontalAlignment.Center;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(800, 450);
+            Controls.Add(Column5);
+            Controls.Add(Column4);
+            Controls.Add(Column3);
+            Controls.Add(Column2);
+            Controls.Add(Column1);
+            Controls.Add(label2);
             Controls.Add(label4);
             Controls.Add(enter_bt);
-            Controls.Add(code_textBox);
-            Controls.Add(user_textBox);
             Controls.Add(create_bt);
-            Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(label1);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -137,12 +169,14 @@
         #endregion
 
         private Label label1;
-        private Label label2;
-        private Label label3;
         private Button create_bt;
-        private TextBox user_textBox;
-        private TextBox code_textBox;
         private Button enter_bt;
         private Label label4;
+        private Label label2;
+        public TextBox Column1;
+        public TextBox Column2;
+        public TextBox Column3;
+        public TextBox Column4;
+        public TextBox Column5;
     }
 }

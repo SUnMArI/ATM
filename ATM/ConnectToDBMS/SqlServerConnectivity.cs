@@ -5,30 +5,23 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace ATM.ConnectToDBMS
 {
-    internal class SqlServerConnectivity
+    public class SqlServerConnectivity
     {
-        public static void Connection()
+        public static SqlConnection Connection() 
         {
-            SqlConnection conn;
-            try
-            {
+            SqlConnection conn;           
                 SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
                 builder.DataSource = "DESKTOP-4R8Q7V3";
                 builder.InitialCatalog = "ATM_Server";
+                builder.UserID = "sa";
+                builder.Password = "123456";
                 builder.TrustServerCertificate = true;
                 conn = new SqlConnection(builder.ConnectionString);
-              
-            }
-            catch (SqlException ex)
-            {   
-                MessageBox.Show(ex.Message);
-
-            }
-
-           
+                return conn;
         }
     }
 }

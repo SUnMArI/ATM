@@ -28,77 +28,82 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
             label1 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
+            withdrawBu = new Button();
+            depositBu = new Button();
+            transferBu = new Button();
+            historyBu = new Button();
+            Balance = new Label();
             SuspendLayout();
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Segoe UI", 20F);
-            textBox1.Location = new Point(44, 60);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(132, 43);
-            textBox1.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15F);
-            label1.Location = new Point(343, 103);
+            label1.Font = new Font("Times New Roman", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(320, 97);
             label1.Name = "label1";
-            label1.Size = new Size(82, 28);
+            label1.Size = new Size(128, 40);
             label1.TabIndex = 1;
             label1.Text = "Options";
             // 
-            // button1
+            // withdrawBu
             // 
-            button1.BackColor = SystemColors.ActiveCaption;
-            button1.Font = new Font("Segoe UI", 13F);
-            button1.Location = new Point(181, 180);
-            button1.Name = "button1";
-            button1.Size = new Size(134, 36);
-            button1.TabIndex = 2;
-            button1.Text = "Withdraw";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            withdrawBu.BackColor = SystemColors.ActiveCaption;
+            withdrawBu.Font = new Font("Segoe UI", 13F);
+            withdrawBu.Location = new Point(190, 179);
+            withdrawBu.Name = "withdrawBu";
+            withdrawBu.Size = new Size(134, 36);
+            withdrawBu.TabIndex = 2;
+            withdrawBu.Text = "Withdraw";
+            withdrawBu.UseVisualStyleBackColor = false;
+            withdrawBu.Click += button1_Click;
             // 
-            // button2
+            // depositBu
             // 
-            button2.BackColor = SystemColors.ActiveCaption;
-            button2.Font = new Font("Segoe UI", 13F);
-            button2.Location = new Point(432, 180);
-            button2.Name = "button2";
-            button2.Size = new Size(134, 36);
-            button2.TabIndex = 3;
-            button2.Text = "Deposit";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            depositBu.BackColor = SystemColors.ActiveCaption;
+            depositBu.Font = new Font("Segoe UI", 13F);
+            depositBu.Location = new Point(441, 179);
+            depositBu.Name = "depositBu";
+            depositBu.Size = new Size(134, 36);
+            depositBu.TabIndex = 3;
+            depositBu.Text = "Deposit";
+            depositBu.UseVisualStyleBackColor = false;
+            depositBu.Click += button2_Click;
             // 
-            // button3
+            // transferBu
             // 
-            button3.BackColor = SystemColors.ActiveCaption;
-            button3.Font = new Font("Segoe UI", 13F);
-            button3.Location = new Point(181, 270);
-            button3.Name = "button3";
-            button3.Size = new Size(134, 36);
-            button3.TabIndex = 4;
-            button3.Text = "Transfer";
-            button3.UseVisualStyleBackColor = false;
+            transferBu.BackColor = SystemColors.ActiveCaption;
+            transferBu.Font = new Font("Segoe UI", 13F);
+            transferBu.Location = new Point(190, 269);
+            transferBu.Name = "transferBu";
+            transferBu.Size = new Size(134, 36);
+            transferBu.TabIndex = 4;
+            transferBu.Text = "Transfer";
+            transferBu.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // historyBu
             // 
-            button4.BackColor = SystemColors.ActiveCaption;
-            button4.Font = new Font("Segoe UI", 13F);
-            button4.Location = new Point(432, 270);
-            button4.Name = "button4";
-            button4.Size = new Size(134, 36);
-            button4.TabIndex = 5;
-            button4.Text = "History";
-            button4.UseVisualStyleBackColor = false;
+            historyBu.BackColor = SystemColors.ActiveCaption;
+            historyBu.Font = new Font("Segoe UI", 13F);
+            historyBu.Location = new Point(441, 269);
+            historyBu.Name = "historyBu";
+            historyBu.Size = new Size(134, 36);
+            historyBu.TabIndex = 5;
+            historyBu.Text = "History";
+            historyBu.UseVisualStyleBackColor = false;
+            historyBu.Click += historyBu_Click;
+            // 
+            // Balance
+            // 
+            Balance.AutoSize = true;
+            Balance.BackColor = SystemColors.ButtonFace;
+            Balance.Font = new Font("Times New Roman", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Balance.Location = new Point(58, 60);
+            Balance.Name = "Balance";
+            Balance.Size = new Size(95, 36);
+            Balance.TabIndex = 6;
+            Balance.Text = "1000$";
+            Balance.Click += Balance_Click;
             // 
             // Menu
             // 
@@ -106,25 +111,26 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(800, 450);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(Balance);
+            Controls.Add(historyBu);
+            Controls.Add(transferBu);
+            Controls.Add(depositBu);
+            Controls.Add(withdrawBu);
             Controls.Add(label1);
-            Controls.Add(textBox1);
             Name = "Menu";
             Text = "Menu";
+            Activated += Menu_Load;
+            Load += Menu_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private TextBox textBox1;
         private Label label1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
+        private Button withdrawBu;
+        private Button depositBu;
+        private Button transferBu;
+        private Button historyBu;
+        private Label Balance;
     }
 }
